@@ -5,11 +5,13 @@ export async function GetTodosApi() {
 
     try {
         const token = localStorage.getItem("token");
-        const result = await axios.get("http://localhost:3000/todos/todo", {
+        const result = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/todos/todo`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
         })
+        console.log(result)
+        console.log(result.list)
         return result.data;
     } catch (error) {
         throw error;
@@ -23,7 +25,7 @@ export async function GetTodosApi() {
 export async function DeleteTodoApi(todoId) {
     try {
         const token = localStorage.getItem("token");
-        const result = await axios.delete(`http://localhost:3000/todos/todo/${todoId}`,  {
+        const result = await axios.delete(`${import.meta.env.VITE_BACKEND_URL}/todos/todo/${todoId}`,  {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -38,7 +40,7 @@ export async function DeleteTodoApi(todoId) {
 export async function UpdateTodoApi(todoId){
     try{
         const token = localStorage.getItem("token")
-        const result = await axios.put(`http://localhost:3000/todos/todo/${todoId}`,{
+        const result = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/todos/todo/${todoId}`,{
             headers : {
                 Authorization : `Bearer ${token}`
             }

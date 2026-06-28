@@ -12,7 +12,7 @@ export function Home() {
     const token = localStorage.getItem("token");
     async function postTodo() {
         try {
-            const result = await axios.post("http://localhost:3000/todos/todo", {
+            const result = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/todos/todo`, {
                 title, description
             }, {
                 headers: {

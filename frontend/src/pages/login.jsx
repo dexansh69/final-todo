@@ -10,7 +10,7 @@ export function Login() {
     const [displayMessage, setDisplayMessage] = useState("")
     async function loginreq() {
         try {
-            const result = await axios.post("http://localhost:3000/users/login", {
+            const result = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/users/login`, {
                 username, password
             })
             const token = result.data.token;

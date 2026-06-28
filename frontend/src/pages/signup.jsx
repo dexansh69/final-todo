@@ -11,7 +11,7 @@ export function Signup(){
     const [displayMessage,setDisplayMessage] =useState("")
     async function Sendsignupreq(){
         try{
-            const result =await axios.post("http://localhost:3000/users/signup",{
+            const result =await axios.post(`${import.meta.env.VITE_BACKEND_URL}/users/signup`,{
                 username,email,password
             })
             setTimeout(() => {
