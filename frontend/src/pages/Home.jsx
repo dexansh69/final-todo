@@ -98,24 +98,41 @@ export function Home() {
         <p > {displayMessage}</p>
 
         <div>
-            {todos.map((todo) => (
+  {todos.map((todo) => (
+    <div key={todo._id}>
+      <b>
+        <h1>{todo.title}</h1>
+      </b>
 
-                <div key={todo._id}>
-                    <b> <h1>{todo.title}</h1></b>
-                    <p>{todo.description}</p>
-                    <button className="px-2 py-2 bg-green-400 rounded-2xl" onClick={() => { deleteTodo(todo._id) }} >delete</button>
-                   {!todo.done && (
-  <button className="px-2 py-2 bg-green-400 rounded-2xl" onClick={() => UpdateTodo(todo._id)}>
-    Mark Complete
-  </button>
-)}
+      <p>{todo.description}</p>
 
-{todo.done && <span>✅ Completed</span>}
-                    
-                </div>
-            ))}</div>
+      <div className="flex items-center gap-3 mt-2">
+        <button
+          className="px-2 py-2 bg-red-500 text-white rounded-2xl"
+          onClick={() => deleteTodo(todo._id)}
+        >
+          Delete
+        </button>
+
+        {!todo.done ? (
+          <button
+            className="px-2 py-2 bg-green-500 text-white rounded-2xl"
+            onClick={() => UpdateTodo(todo._id)}
+          >
+            Mark Complete
+          </button>
+        ) : (
+          <span className="px-2 py-2 text-green-600 font-semibold">
+            ✅ Completed
+          </span>
+        )}
+      </div>
+    </div>
+  ))}
+</div>
+</div>
 
 
 
-    </div>)
+    )
 }
