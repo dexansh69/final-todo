@@ -6,7 +6,7 @@ import './App.css'
 import { Signup } from './pages/signup'
 import { Route, Routes } from 'react-router-dom'
 import { Login } from './pages/login'
-import { Hello } from './pages/Home'
+import {  Home } from './pages/Home'
 
 function App() {
 
@@ -17,6 +17,7 @@ function App() {
     <Routes>
       <Route index element={<Login/>}></Route>
       <Route path="/signup" element={<Signup/>}></Route>
+      <Route path="/home" element={<Home/> }></Route>
     </Routes>
      
 

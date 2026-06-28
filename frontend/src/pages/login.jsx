@@ -13,7 +13,12 @@ export function Login() {
             const result = await axios.post("http://localhost:3000/users/login", {
                 username, password
             })
+            const token = result.data.token;
+            localStorage.setItem("token",token);
             setDisplayMessage(result.data.message)
+            setTimeout(() => {
+                navigate("/home")
+            }, 2000);
         } catch (error) {
             if (error.response && error.response.data) {
         // Tumhara backend wala custom message yahan milega
