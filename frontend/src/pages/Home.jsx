@@ -104,7 +104,13 @@ export function Home() {
                     <b> <h1>{todo.title}</h1></b>
                     <p>{todo.description}</p>
                     <button className="px-2 py-2 bg-green-400 rounded-2xl" onClick={() => { deleteTodo(todo._id) }} >delete</button>
-                    <button className="px-2 py-2 bg-green-400 rounded-2xl" onClick={() => { UpdateTodo(todo._id) }}>mark as done</button>
+                   {!todo.done && (
+  <button onClick={() => UpdateTodo(todo._id)}>
+    Mark Complete
+  </button>
+)}
+
+{todo.done && <span>✅ Completed</span>}
                     
                 </div>
             ))}</div>
