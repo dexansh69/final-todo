@@ -105,7 +105,7 @@ export function Home() {
                     <p>{todo.description}</p>
                     <button className="px-2 py-2 bg-green-400 rounded-2xl" onClick={() => { deleteTodo(todo._id) }} >delete</button>
                    {!todo.done && (
-  <button onClick={() => UpdateTodo(todo._id)}>
+  <button className="px-2 py-2 bg-green-400 rounded-2xl" onClick={() => UpdateTodo(todo._id)}>
     Mark Complete
   </button>
 )}
