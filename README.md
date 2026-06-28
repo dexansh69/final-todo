@@ -1,36 +1,167 @@
-backend/
+## 📸 Screenshots
+
+### Login Page
+
+![Login](./screenshots/login.png)
+
+### Signup Page
+
+![Signup](./screenshots/signup.png)
+
+### Todo Dashboard
+
+![Dashboard](./screenshots/dashboard.png)
+
+# MERN Todo App
+
+A full-stack Todo application built with the MERN stack featuring JWT authentication, CRUD operations, and cloud deployment.
+
+## Live Demo
+
+Frontend: https://final-todo-mocha.vercel.app
+
+Backend: https://final-todo-3b54.onrender.com
+
+---
+
+## Features
+
+- User Signup & Login
+- JWT Authentication
+- Protected Routes
+- Create Todo
+- View Todos
+- Mark Todo as Completed
+- Delete Todo
+- MongoDB Atlas Database
+- Responsive UI
+
+---
+
+## Tech Stack
+
+### Frontend
+- React
+- Vite
+- Axios
+
+### Backend
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+- JWT
+- bcryptjs
+- Zod
+
+### Deployment
+- Vercel
+- Render
+- MongoDB Atlas
+
+---
+
+## Folder Structure
+
+```
+final-todo/
 │
-├── src/
+├── frontend/
 │
-│   ├── config/
-│   │   └── db.js              # MongoDB connection
-│
-│   ├── models/
-│   │   ├── user.model.js      # User schema
-│   │   └── todo.model.js      # Todo schema
-│
-│   ├── routes/
-│   │   ├── auth.routes.js     # signup/login routes
-│   │   └── todo.routes.js     # CRUD routes
-│
-│   ├── controllers/
-│   │   ├── auth.controller.js # logic for signup/login
-│   │   └── todo.controller.js # CRUD logic
-│
-│   ├── validators/
-│   │   ├── auth.validator.js  # Zod schemas (signup/login)
-│   │   └── todo.validator.js   # Zod schemas (todo)
-│
-│   ├── middleware/
-│   │   ├── auth.middleware.js # JWT verify (later)
-│   │   └── validate.js        # Zod reusable middleware
-│
-│   ├── utils/
-│   │   ├── jwt.js             # token functions
-│   │   └── hash.js            # password hashing (bcrypt)
-│
-│   ├── app.js                 # express app setup
-│   └── server.js              # entry point
-│
-├── .env
-├── package.json
+└── backend/
+```
+
+---
+
+## Installation
+
+### Clone the repository
+
+```bash
+git clone https://github.com/dexansh69/final-todo.git
+```
+
+### Backend
+
+```bash
+cd backend
+npm install
+```
+
+Create a `.env` file:
+
+```env
+MONGO_URL=your_mongodb_connection_string
+JWT_SECRET=your_secret
+```
+
+Start backend
+
+```bash
+npm start
+```
+
+---
+
+### Frontend
+
+```bash
+cd frontend
+npm install
+```
+
+Create `.env`
+
+```env
+VITE_BACKEND_URL=http://localhost:3000
+```
+
+Run frontend
+
+```bash
+npm run dev
+```
+
+---
+
+## API Endpoints
+
+### Auth
+
+- POST /user/signup
+- POST /user/signin
+
+### Todos
+
+- GET /todos/todo
+- POST /todos/todo
+- PUT /todos/todo/:id
+- DELETE /todos/todo/:id
+
+---
+
+## Future Improvements
+
+- Edit Todo title & description
+- Due Dates
+- Categories
+- Search & Filter
+- Dark Mode
+
+---
+
+## Author
+
+GitHub:
+https://github.com/dexansh69
+
+mern
+react
+express
+mongodb
+nodejs
+jwt
+vite
+axios
+crud
+fullstack
